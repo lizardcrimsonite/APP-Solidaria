@@ -13,8 +13,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :status, "Estado de la Ayuda" %>
-    <%= form.select :status, [["Pendiente", "pending"], ["Completa", "completed"]] %>
+  <%= form.label :need_id, "Selecciona la Necesidad a la que ayudarás" %>
+  <%= form.collection_select :need_id, Need.all, :id, :description %>
   </div>
 
   <div class="actions">
