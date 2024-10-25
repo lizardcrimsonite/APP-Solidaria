@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
   resources :users, only: [:index, :show, :new, :create]
   resources :needs, only: [:index, :show, :new, :create, :edit, :update]
   resources :helps, only: [:index, :show, :new, :create, :edit, :update]

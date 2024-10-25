@@ -1,0 +1,15 @@
+<h1>Mi Panel de Control</h1>
+
+<h2>Mis Necesidades</h2>
+<ul>
+  <% @needs.each do |need| %>
+    <li><%= link_to need.description, need_path(need) %></li>
+  <% end %>
+</ul>
+
+<h2>Mis Ayudas</h2>
+<ul>
+  <% @helps.each do |help| %>
+    <li><%= link_to "Ver Ayuda", help_path(help) %></li>
+  <% end %>
+</ul>
