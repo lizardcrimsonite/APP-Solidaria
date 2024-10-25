@@ -2,5 +2,12 @@
 <p>Ubicación: <%= @need.location %></p>
 <p>Estado: <%= @need.status %></p>
 
+<h2>Notificaciones</h2>
+<ul>
+  <% @need.notifications.each do |notification| %>
+    <li><%= notification.message %></li>
+  <% end %>
+</ul>
+
 <%= link_to "Editar Necesidad", edit_need_path(@need) %> |
 <%= link_to "Volver a la lista de necesidades", needs_path %>

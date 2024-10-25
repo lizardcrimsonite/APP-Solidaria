@@ -13,14 +13,14 @@ class HelpsController < ApplicationController
 
   def create
     @help = Help.new(help_params)
-    @help.user = User.first # Temporal: Asignar un usuario hasta que implementemos la autenticación
-    @help.need = Need.first # Temporal: Asignar una necesidad para pruebas
     if @help.save
-      redirect_to @help, notice: "Ayuda creada con éxito."
+      Notification.create(message: "Se ha ofrecido ayuda para tu necesidad", need: @help.need)
+      redirect_to @help, notice: "Ayuda creada y notificación enviada."
     else
       render :new
     end
   end
+  
 
   def edit
     @help = Help.find(params[:id])
