@@ -18,6 +18,7 @@ Devise.setup do |config|
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
+  config.scoped_views = true
   # config.parent_controller = 'DeviseController'
 
   # ==> Mailer Configuration

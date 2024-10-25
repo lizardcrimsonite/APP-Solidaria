@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   # Ruta raíz de la aplicación
   root "needs#index"
+  #root to: 'dashboard#index' # Ajusta según tu controlador principal
+
 end
