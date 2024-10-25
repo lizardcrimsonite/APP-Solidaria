@@ -1,2 +1,6 @@
-<h1>Needs#show</h1>
-<p>Find me in app/views/needs/show.html.erb</p>
+<h1><%= @need.description %></h1>
+<p>Ubicación: <%= @need.location %></p>
+<p>Estado: <%= @need.status %></p>
+
+<%= link_to "Editar Necesidad", edit_need_path(@need) %> |
+<%= link_to "Volver a la lista de necesidades", needs_path %>

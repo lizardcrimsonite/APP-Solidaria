@@ -1,2 +1,25 @@
-<h1>Helps#new</h1>
-<p>Find me in app/views/helps/new.html.erb</p>
+<h1>Ofrecer Ayuda</h1>
+
+<%= form_with(model: @help, local: true) do |form| %>
+  <% if @help.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@help.errors.count, "error") %> prohibited this help from being saved:</h2>
+      <ul>
+        <% @help.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :status, "Estado de la Ayuda" %>
+    <%= form.select :status, [["Pendiente", "pending"], ["Completa", "completed"]] %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Ofrecer Ayuda" %>
+  </div>
+<% end %>
+
+<%= link_to "Volver a la lista de ayudas", helps_path %>

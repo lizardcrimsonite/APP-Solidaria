@@ -1,2 +1,5 @@
-<h1>Helps#show</h1>
-<p>Find me in app/views/helps/show.html.erb</p>
+<h1>Detalle de la Ayuda</h1>
+<p>Estado: <%= @help.status %></p>
+
+<%= link_to "Editar Ayuda", edit_help_path(@help) %> |
+<%= link_to "Volver a la lista de ayudas", helps_path %>

@@ -1,2 +1,12 @@
-<h1>Needs#index</h1>
-<p>Find me in app/views/needs/index.html.erb</p>
+<h1>Lista de Necesidades</h1>
+
+<%= link_to "Crear Nueva Necesidad", new_need_path %>
+
+<ul>
+  <% @needs.each do |need| %>
+    <li>
+      <%= link_to need.description, need_path(need) %>
+      - <%= need.location %>
+    </li>
+  <% end %>
+</ul>

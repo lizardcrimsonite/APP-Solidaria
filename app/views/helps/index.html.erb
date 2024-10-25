@@ -1,2 +1,11 @@
-<h1>Helps#index</h1>
-<p>Find me in app/views/helps/index.html.erb</p>
+<h1>Lista de Ayudas</h1>
+
+<%= link_to "Ofrecer Ayuda", new_help_path %>
+
+<ul>
+  <% @helps.each do |help| %>
+    <li>
+      <%= link_to "Ver Detalle", help_path(help) %> - Estado: <%= help.status %>
+    </li>
+  <% end %>
+</ul>
