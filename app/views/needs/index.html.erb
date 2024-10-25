@@ -10,3 +10,9 @@
     </li>
   <% end %>
 </ul>
+<%= search_form_for @q do |f| %>
+    <%= f.label :location_cont, "Buscar por ubicación" %>
+    <%= f.text_field :location_cont %>
+    <%= f.submit "Buscar" %>
+  <% end %>
+  

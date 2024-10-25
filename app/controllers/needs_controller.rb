@@ -1,7 +1,9 @@
 class NeedsController < ApplicationController
   def index
-    @needs = Need.all
+    @q = Need.ransack(params[:q])
+    @needs = @q.result(distinct: true)
   end
+  
 
   def show
     @need = Need.find(params[:id])

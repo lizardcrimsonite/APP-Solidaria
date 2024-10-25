@@ -8,6 +8,15 @@
     <li><%= notification.message %></li>
   <% end %>
 </ul>
-
+<%= form_with model: [ @need, @need.messages.build ], local: true do |form| %>
+    <div class="field">
+      <%= form.label :content, "Mensaje" %>
+      <%= form.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Enviar Mensaje" %>
+    </div>
+  <% end %>
+  
 <%= link_to "Editar Necesidad", edit_need_path(@need) %> |
 <%= link_to "Volver a la lista de necesidades", needs_path %>
